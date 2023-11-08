@@ -1,0 +1,33 @@
+.logo a {
+    line-height: 1.7em;
+    position: relative;
+}
+
+/* Underline logo styling */
+
+.logo a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 38px;
+    background-color: var(--tertiary-color);
+    border-radius: 25px;
+    transition: width 0.3s;
+}
+
+.logo a:hover:before {
+    width: 95%;
+}
+
+.logo a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 95%;
+    max-width: 255px;
+    background-color: var(--tertiary-color);
+}
