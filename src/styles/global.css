@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Import custom css style for header */
+@import "partials/_header.css";
+
+/* Import custom css style for tooltips */
+@import "partials/_tooltips.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #52BEA0;
+    --secondary-color: #00A6A6;
+    --tertiary-color: #E5B61C;
+}
+
+.bg-azure {
+    @apply bg-gradient-to-br from-primary to-secondary;
+}
