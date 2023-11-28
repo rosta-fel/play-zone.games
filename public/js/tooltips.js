@@ -1,5 +1,5 @@
 tippy('#store-link', {
-    content: 'Soon...',
+    content: '🥺 Soon...',
     placement: 'bottom',
     animation: 'scale',
     inertia: true,
