@@ -6,6 +6,8 @@
 /* Import custom css style for tooltips */
 @import "partials/_tooltips.css";
 
+@import "partials/_navbar-toggle.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
