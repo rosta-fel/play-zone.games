@@ -1,20 +1,39 @@
-<header class="font-poppins shadow-lg">
-    <nav class="font-body mx-auto max-w-screen-xl items-center justify-between p-2 pr-4 md:flex">
-        <div class="logo flex items-center gap-1">
-            <img class="drop-shadow-lg" id="myIcon" src="img/logo.svg" alt="logo.svg" width="40px" />
-            <a class="bg-azure cursor-pointer bg-clip-text text-3xl font-semibold text-transparent">PlayZone</a>
+<header class="font-poppins shadow-md select-none xyz-in" xyz="duration-6 ease-out-back fade-100% up-5">
+        <nav class="font-body mx-auto max-w-screen-xl items-center justify-between p-2 z-10 pr-4 md:flex">
+            <div class="flex justify-between">
+                <div class="logo flex items-center gap-1">
+                    <img class="drop-shadow-lg" id="myIcon" src="img/logo.svg" alt="logo.svg" width="40px" />
+                    <a class="text-3xl font-semibold bg-clip-text text-transparent bg-azure cursor-pointer">PlayZone</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <a id="navbar-toggle" class="cursor-pointer flex items-center"><span></span></a>
+                </div>
+            </div>
+            <ul class="hidden md:flex gap-4">
+                <li><a class="text-tertiary font-bold underline decoration-2 underline-offset-4" href="#">Home</a></li>
+                <li><p class="w-fit cursor-not-allowed hover:text-gray-500" id="store-link">Store</p></li>
+                <li><a class="hover:text-tertiary" href="#">Forum</a></li>
+                <li><a class="hover:text-tertiary" href="#">About Us</a></li>
+            </ul>
+            <div class="hidden md:block space-x-2">
+                <a class="font-bold hover:text-primary cursor-pointer">Log In</a>
+                <button class="relative inline-flex items-center justify-center p-0.5 text-sm font-bold bg-azure text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group group-hover:from-primary group-hover:to-secondary rounded-lg">
+                    <span class="bg-white relative rounded-md text-lg px-2 py-0.5 text-secondary transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-white">Sign Up</span>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden absolute right-0 md:hidden m-2 p-6 rounded-lg shadow-md xyz-in" id="navbar-items" xyz="small-100% origin-top-right">
+            <ul class="space-y-1">
+                <li><a class="text-tertiary font-bold underline decoration-2 underline-offset-4" href="#">Home</a></li>
+                <li><p class="w-fit cursor-not-allowed hover:text-gray-500" id="store-link">Store</p></li>
+                <li><a class="hover:text-tertiary" href="#">Forum</a></li>
+                <li><a class="hover:text-tertiary" href="#">About Us</a></li>
+            </ul>
+            <div class="mt-2 space-x-2">
+                <a class="font-bold hover:text-primary cursor-pointer">Log In</a>
+                <button class="relative inline-flex items-center justify-center p-0.5 text-sm font-bold bg-azure text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group group-hover:from-primary group-hover:to-secondary rounded-lg">
+                    <span class="bg-white relative rounded-md text-lg px-2 py-0.5 text-secondary transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-white">Sign Up</span>
+                </button>
+            </div>
         </div>
-        <ul class="m-auto hidden gap-4 md:flex">
-            <li><a class="text-tertiary font-bold underline decoration-2 underline-offset-4" href="#">Home</a></li>
-            <li><p class="w-fit cursor-not-allowed hover:text-gray-500" id="store-link" href="#">Store</p></li>
-            <li><a class="hover:text-tertiary" href="#">Forum</a></li>
-            <li><a class="hover:text-tertiary" href="#">About Us</a></li>
-        </ul>
-        <div class="hidden space-x-2 md:block">
-            <a class="hover:text-primary cursor-pointer font-bold">Log In</a>
-            <button class="bg-azure group-hover:from-primary group-hover:to-secondary group relative inline-flex items-center justify-center overflow-hidden rounded-lg p-0.5 text-sm font-bold text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200">
-                <span class="text-secondary relative rounded-md bg-white px-2 py-0.5 text-lg transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-white"> Sign Up </span>
-            </button>
-        </div>
-    </nav>
 </header>
