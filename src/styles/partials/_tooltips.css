@@ -5,17 +5,17 @@
 }
 
 .tippy-box[data-theme~='azure'][data-placement^='top'] > .tippy-arrow::before {
-    border-top-color: var(--primary-color);
+    border-top-color: #17ada4;
 }
 
 .tippy-box[data-theme~='azure'][data-placement^='bottom'] > .tippy-arrow::before {
-    border-bottom-color: var(--primary-color);
+    border-bottom-color: #3db8a2;
 }
 
 .tippy-box[data-theme~='azure'][data-placement^='left'] > .tippy-arrow::before {
-    border-left-color: var(--primary-color);
+    border-left-color: #17ada4;
 }
 
 .tippy-box[data-theme~='azure'][data-placement^='right'] > .tippy-arrow::before {
-    border-right-color: var(--primary-color);
+    border-right-color: #3eb8a1;
 }
