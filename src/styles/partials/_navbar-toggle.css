@@ -1,0 +1,49 @@
+#navbar-toggle {
+    width: 28px;
+    height: 30px;
+}
+
+#navbar-toggle span:after,
+#navbar-toggle span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -9px;
+}
+#navbar-toggle span:after {
+    top: 9px;
+}
+#navbar-toggle span {
+    position: relative;
+    display: block;
+    background-color: var(--tertiary-color);
+}
+
+#navbar-toggle span,
+#navbar-toggle span:after,
+#navbar-toggle span:before {
+    width: 100%;
+    height: 5px;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+}
+
+/* Устанавливаем цвет верхней и нижней полос */
+#navbar-toggle span:before,
+#navbar-toggle span:after {
+    background-color: var(--primary-color);
+}
+
+/* on activation */
+#navbar-toggle.on span {
+    background-color: transparent;
+}
+#navbar-toggle.on span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: var(--primary-color);
+}
+#navbar-toggle.on span:after {
+    transform: rotate(-45deg) translate(7px, -8px);
+    background-color: var(--primary-color);
+}
