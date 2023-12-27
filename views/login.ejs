@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- tippy imports -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.7/dist/tippy.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <!-- animxyz import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.6.6/dist/animxyz.min.css" />
+    <!-- style import -->
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <title>Play Zone | Log In</title>
+</head>
+<body>
+    <!-- header -->
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <section class="flex justify-center mx-4 md:mt-16 mt-8">
+            <form class="w-fit p-4 shadow-lg rounded-lg">
+                <h1 class="text-center font-bold text-2xl">Log In</h1>
+                <label for="username-login" class="block underline decoration-dashed mt-2 mb-1 text-sm font-medium text-gray-900">Username</label>
+                <div class="flex">
+                        <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 rounded-s-md">
+                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                            </svg>
+                        </span>
+                    <input type="text" id="username-login" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-secondary focus:border-secondary block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5" placeholder="playzone">
+                </div>
+                <label for="password-login" class="block underline decoration-dashed mt-2 mb-1 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <div class="flex">
+                        <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 rounded-s-md">
+                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="2 2 20 20">
+                                <path d="M18.3281 5.67L6.58813 17.41C6.14813 17.85 5.40813 17.79 5.04813 17.27C3.80813 15.46 3.07812 13.32 3.07812 11.12V6.73C3.07812 5.91 3.69813 4.98 4.45813 4.67L10.0281 2.39C11.2881 1.87 12.6881 1.87 13.9481 2.39L17.9981 4.04C18.6581 4.31 18.8281 5.17 18.3281 5.67Z"/>
+                                <path d="M19.27 7.04159C19.92 6.49159 20.91 6.96159 20.91 7.81159V11.1216C20.91 16.0116 17.36 20.5916 12.51 21.9316C12.18 22.0216 11.82 22.0216 11.48 21.9316C10.06 21.5316 8.74001 20.8616 7.61001 19.9816C7.13001 19.6116 7.08001 18.9116 7.50001 18.4816C9.68001 16.2516 16.06 9.75159 19.27 7.04159Z"/>
+                            </svg>
+                        </span>
+                    <input type="password" id="password-login" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-secondary focus:border-secondary block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button class="bg-tertiary hover:bg-yellow-600 rounded-md text-white flex items-center py-1 pr-3 pl-6">
+                        <span class="mr-3">Log In</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                        <span class="sr-only">Icon description</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="js/tooltips.js"></script>
+    <script type="module" src="js/header.js"></script>
+</body>
+</html>
