@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Web app for my server.",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "build:css": "postcss src/styles/global.css -o public/css/tailwind.css",
     "start": "node app.js",
@@ -16,6 +17,8 @@
     "autoprefixer": "^10.4.16",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
