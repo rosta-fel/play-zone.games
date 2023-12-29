@@ -21,3 +21,11 @@
 .bg-azure {
     @apply bg-gradient-to-br from-primary to-secondary;
 }
+
+.active-header-a-tag {
+    @apply text-tertiary font-bold underline decoration-2 underline-offset-4
+}
+
+.active-header-login {
+    @apply text-primary underline decoration-2 underline-offset-4
+}
