@@ -23,7 +23,7 @@
     <main>
         <section class="flex justify-center mx-4 md:mt-16 mt-8">
             <form class="w-fit p-4 shadow-lg rounded-lg">
-                <h1 class="text-center font-bold text-2xl">Log In</h1>
+                <h1 class="text-center font-bold text-xl">Sign in to your account</h1>
                 <label for="username-login" class="block underline decoration-dashed mt-2 mb-1 text-sm font-medium text-gray-900">Username</label>
                 <div class="flex">
                         <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 rounded-s-md">
@@ -43,9 +43,13 @@
                         </span>
                     <input type="password" id="password-login" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-secondary focus:border-secondary block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5">
                 </div>
+                <div class="inline-flex space-x-2.5 pt-2">
+                    <p class="text-gray-600">Don't have an account?</p>
+                    <a class="text-secondary font-semibold underline hover:no-underline" href="/signup">Sign Up</a>
+                </div>
                 <div class="mt-4 flex justify-center">
                     <button class="bg-tertiary hover:bg-yellow-600 rounded-md text-white flex items-center py-1 pr-3 pl-6">
-                        <span class="mr-3">Log In</span>
+                        <span class="mr-3 font-bold">Log In</span>
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                         </svg>
