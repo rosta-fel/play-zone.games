@@ -1,0 +1,13 @@
+-- MySQL 8.0
+
+CREATE DATABASE wa_playzone_db;
+USE wa_playzone_db;
+
+CREATE TABLE USERS (
+	ID INT PRIMARY KEY AUTO_INCREMENT,
+    `Name` VARCHAR(15) NOT NULL UNIQUE,
+    Email VARCHAR(35) NOT NULL,
+    `Password` VARCHAR(64) NOT NULL,
+    
+    CONSTRAINT CHECK (Email LIKE '%@%')
+);
