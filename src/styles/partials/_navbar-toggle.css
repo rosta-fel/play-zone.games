@@ -10,9 +10,11 @@
     left: 0;
     top: -9px;
 }
+
 #navbar-toggle span:after {
     top: 9px;
 }
+
 #navbar-toggle span {
     position: relative;
     display: block;
@@ -29,20 +31,20 @@
     border-radius: 2px;
 }
 
-/* Устанавливаем цвет верхней и нижней полос */
 #navbar-toggle span:before,
 #navbar-toggle span:after {
     background-color: var(--primary-color);
 }
 
-/* on activation */
 #navbar-toggle.on span {
     background-color: transparent;
 }
+
 #navbar-toggle.on span:before {
     transform: rotate(45deg) translate(5px, 5px);
     background-color: var(--primary-color);
 }
+
 #navbar-toggle.on span:after {
     transform: rotate(-45deg) translate(7px, -8px);
     background-color: var(--primary-color);
