@@ -24,7 +24,7 @@ function checkAuth(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.render("login", {currentPage: "login"});
+  res.redirect('/login');
 }
 
 app.get("/chat", checkAuth, (_req, res) => res.render("chat", {currentPage: "chat"}));
