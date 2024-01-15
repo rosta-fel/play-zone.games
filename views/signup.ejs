@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- tippy imports -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.7/dist/tippy.css" />
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-    <!-- animxyz import -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.6.6/dist/animxyz.min.css" />
-    <!-- style import -->
-    <link rel="stylesheet" href="css/tailwind.css" />
-    <title>Play Zone | Sign Up</title>
-</head>
+
+<% let pageTitle = "Play Zone | Sign Up" %>
+<%- include('partials/head.ejs', { pageTitle: pageTitle }) %>
+
 <body>
+
     <!-- header -->
     <%- include('partials/header.ejs') %>
 
@@ -72,5 +61,7 @@
 
     <script type="module" src="js/tooltips.js"></script>
     <script type="module" src="js/header.js"></script>
+
 </body>
+
 </html>
