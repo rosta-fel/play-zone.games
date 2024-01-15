@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% let pageTitle = "Play Zone | Page Not Found" %>
+<%- include('../partials/head.ejs', { pageTitle: pageTitle }) %>
+
+<body>
+
+<!-- header -->
+<%- include('../partials/header.ejs') %>
+
+<div class="container font-poppins mx-auto my-8 text-center">
+    <h1 class="text-4xl font-bold mb-4"><span class="text-red-600">[404]</span> Page Not Found</h1>
+    <p class="text-lg text-gray-500">The page you are looking for does not exist.</p>
+</div>
+
+<script type="module" src="js/tooltips.js"></script>
+<script type="module" src="js/header.js"></script>
+
+</body>
+
+</html>
