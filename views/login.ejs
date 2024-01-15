@@ -10,7 +10,7 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-        <section class="flex justify-center mx-4 md:mt-16 mt-8">
+        <section class="flex justify-center mx-4 mt-6">
             <form class="w-fit p-4 shadow-lg rounded-lg" method="POST" action="/login">
                 <h1 class="text-center font-bold text-xl">Sign in to your account</h1>
                 <label for="username-login" class="block underline decoration-dashed mt-2 mb-1 text-sm font-medium text-gray-900">Username</label>
@@ -48,6 +48,9 @@
             </form>
         </section>
     </main>
+
+    <!-- footer -->
+    <%- include('partials/footer.ejs') %>
 
     <script type="module" src="js/tooltips.js"></script>
     <script type="module" src="js/header.js"></script>
