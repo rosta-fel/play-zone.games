@@ -6,10 +6,17 @@ import bodyParser from "body-parser";
 import path, {dirname} from "path";
 import {fileURLToPath} from "url";
 import methodOverride from "method-override";
+import AuthMiddleware from "./middlewares/auth.js";
+import PageUtil from "./utils/page.js";
+import PassportUtil from "./utils/passport.js";
+import authRoute from "./routes/auth.js";
+import setUserMiddleware from "./middlewares/user.js";
 import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+PassportUtil.initialize(passport)
 
 const app = express();
 const port = process.env.APP_PORT;
@@ -31,32 +38,17 @@ app.use(passport.initialize());
 app.use(passport.session({}));
 app.use(methodOverride('_method'))
 
-// S-T-A-R-T: EXTERNAL FUNCTIONS
+app.use(setUserMiddleware);
 
-const renderPage = (res, pageName, additionalParams = {}) => {
-  const defaultParams = { currentPage: pageName };
-  const mergedParams = { ...defaultParams, ...additionalParams };
-  res.render(pageName, mergedParams);
-};
+app.get("/", (_req, res) => PageUtil.render(res, "index"));
+app.get("/chat", AuthMiddleware.checkAuth, (_req, res) => PageUtil.render(res, "chat"));
+app.get("/about-us", (_req, res) => PageUtil.render(res, "about-us"));
 
-function checkAuth(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-}
-
-// E-N-D: EXTERNAL FUNCTIONS
-
-app.get("/", (_req, res) => renderPage(res, "index"));
-app.get("/login", (_req, res) => renderPage(res, "login"));
-app.get("/signup", (_req, res) => renderPage(res, "signup"));
-app.get("/chat", checkAuth, (_req, res) => renderPage(res, "chat"));
-app.get("/about-us", (_req, res) => renderPage(res, "about-us"));
+app.use(authRoute);
 
 app.get('*', (_req, res) => {
   res.status(404);
-  renderPage(res, "utils/404");
+  PageUtil.render(res, "utils/404");
 });
 
 app.listen(port, () => {
