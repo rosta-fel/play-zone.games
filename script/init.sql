@@ -4,10 +4,10 @@ CREATE DATABASE wa_playzone_db;
 USE wa_playzone_db;
 
 CREATE TABLE USERS (
-	ID INT PRIMARY KEY AUTO_INCREMENT,
-    `Name` VARCHAR(15) NOT NULL UNIQUE,
-    Email VARCHAR(35) NOT NULL,
-    `Password` VARCHAR(64) NOT NULL,
+	id VARCHAR(256) PRIMARY KEY,
+    username VARCHAR(15) NOT NULL UNIQUE,
+    email VARCHAR(35) NOT NULL,
+    password VARCHAR(128) NOT NULL,
     
-    CONSTRAINT CHECK (Email LIKE '%@%')
+    CONSTRAINT CHECK (email LIKE '%@%')
 );
