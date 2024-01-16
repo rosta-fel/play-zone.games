@@ -15,12 +15,20 @@
                 <li><a class="<%= currentPage === 'chat' ? 'active-header-a-tag' : 'hover:text-tertiary' %>" href="/chat">Chat</a></li>
                 <li><a class="<%= currentPage === 'about-us' ? 'active-header-a-tag' : 'hover:text-tertiary' %>" href="/about-us">About Us</a></li>
             </ul>
-            <div class="hidden md:block space-x-2">
-                <a class="font-bold <%= currentPage === 'login' ? 'active-header-login' : 'hover:text-primary cursor-pointer'%>" href="/login">Log In</a>
-                <button class="relative inline-flex items-center justify-center p-0.5 text-sm font-bold bg-azure text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group group-hover:from-primary group-hover:to-secondary rounded-lg">
-                    <span class="<%= currentPage === 'signup' ? 'text-white' : 'bg-white group-hover:bg-opacity-0 group-hover:text-white'%> relative rounded-md text-lg px-2 py-0.5 text-secondary transition-all duration-75 ease-in"><a href="/signup">Sign Up</a></span>
-                </button>
-            </div>
+            <% if (user) { %>
+                <form id="logout-form" action="/logout?_method=DELETE" method="POST" class="inline-flex">
+                    <p>Howdy,&nbsp;</p>
+                    <a href="#" id="logout-link" class="text-secondary font-semibold hover:underline underline-offset-2 decoration-2 cursor-pointer"><%= user.username %></a>
+                    <p>!</p>
+                </form>
+            <% } else { %>
+                <div class="hidden md:block space-x-2">
+                    <a class="font-bold <%= currentPage === 'login' ? 'active-header-login' : 'hover:text-primary cursor-pointer'%>" href="/login">Log In</a>
+                    <button class="relative inline-flex items-center justify-center p-0.5 text-sm font-bold bg-azure text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group group-hover:from-primary group-hover:to-secondary rounded-lg">
+                        <span class="<%= currentPage === 'signup' ? 'text-white' : 'bg-white group-hover:bg-opacity-0 group-hover:text-white'%> relative rounded-md text-lg px-2 py-0.5 text-secondary transition-all duration-75 ease-in"><a href="/signup">Sign Up</a></span>
+                    </button>
+                </div>
+            <% } %>
         </nav>
         <div class="hidden bg-white absolute right-0 md:hidden m-2 p-6 rounded-lg shadow-md xyz-in" id="navbar-items" xyz="small-100% origin-top-right">
             <ul class="space-y-1">
