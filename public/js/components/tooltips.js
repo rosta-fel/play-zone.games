@@ -6,7 +6,7 @@ tippy('#store-link', {
     theme: 'azure',
 });
 
-tippy('#logout-link', {
+tippy('.logout-link', {
     content: 'Click to logout!',
     placement: 'bottom',
     animation: 'shift-toward-extreme',
