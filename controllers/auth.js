@@ -10,6 +10,7 @@ class AuthController {
                 return next(err);
             }
             if (!user) {
+                req.flash('error', 'Incorrect username or password. Please try again.');
                 return res.redirect('/login');
             }
             req.logIn(user, (loginErr) => {
@@ -35,6 +36,13 @@ class AuthController {
             if (!req.body.username || !req.body.email || !req.body.password) {
                 res.redirect("/signup");
             }
+
+            const existingUser = await UsersRepo.getByUsername(req.body.username);
+            if (existingUser) {
+                req.flash('error', 'Username already exists. Please choose a different username.');
+                return res.redirect("/signup");
+            }
+
             const user = {
                 id: crypto.randomUUID(),
                 username: req.body.username,
