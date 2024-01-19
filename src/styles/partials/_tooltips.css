@@ -19,3 +19,29 @@
 .tippy-box[data-theme~='azure'][data-placement^='right'] > .tippy-arrow::before {
     border-right-color: #3eb8a1;
 }
+
+/* Azure tooltip style with red border */
+
+.tippy-box[data-theme~='azure-yellow-bordered'] {
+    @apply border-2 border-tertiary bg-azure text-white font-poppins;
+}
+
+.tippy-box[data-theme~='azure-yellow-bordered'][data-placement^='top'] > .tippy-arrow::before {
+    margin-bottom: -1px;
+    border-top-color: var(--tertiary-color);
+}
+
+.tippy-box[data-theme~='azure-yellow-bordered'][data-placement^='bottom'] > .tippy-arrow::before {
+    margin-top: -1px;
+    border-bottom-color: var(--tertiary-color);
+}
+
+.tippy-box[data-theme~='azure-yellow-bordered'][data-placement^='left'] > .tippy-arrow::before {
+    margin-right: -1px;
+    border-left-color: var(--tertiary-color);
+}
+
+.tippy-box[data-theme~='azure-yellow-bordered'][data-placement^='right'] > .tippy-arrow::before {
+    margin-left: -1px;
+    border-right-color: var(--tertiary-color);
+}
