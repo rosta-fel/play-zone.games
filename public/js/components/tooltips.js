@@ -21,7 +21,7 @@ createTippy('.logout-link', {
     animation: 'shift-toward-extreme',
 });
 
-['#username', '#email', '#password'].forEach((elementId) => {
+['#username', '#email', '#password', '#login-form', '#signup-form'].forEach((elementId) => {
     createTippy(elementId, {
         maxWidth: 200,
         trigger: 'focus',
