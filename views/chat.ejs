@@ -9,9 +9,23 @@
 <!-- header -->
 <%- include('partials/header.ejs') %>
 
+<main>
+    <section class="mx-auto max-w-screen-xl mt-6">
+        <div class="border-4 h-80 border-primary rounded-2xl overflow-hidden mx-6">
+            <form id="chat-form">
+                <input id="message" type="text" class="border-b-4 border-primary w-full p-3 focus:outline-none" placeholder="Type your message here...">
+            </form>
+            <ul id="messages"></ul>
+            <p class="activity"></p>
+        </div>
+    </section>
+</main>
+
 <!-- footer -->
 <%- include('partials/footer.ejs') %>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js" integrity="sha512-skuhu6jj+sQnhLq1Txsack8VfnIrX8wL+MTFilYlFFT/NuLJm7eya7zOROs39Jy5cjASMEWqxLzijRVmKhsqWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/chat.js"></script>
 <%- include('modules/js.scripts.ejs') %>
 
 </body>
