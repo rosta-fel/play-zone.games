@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const flashMessagesError = document.getElementById('flash-messages-error');
 
     if (flashMessagesError) {
-        const username = document.getElementById('username');
-        TippyUtil.showTippy(username, flashMessagesError.innerText);
+        const signupForm = document.getElementById('signup-form');
+        TippyUtil.showTippy(signupForm, flashMessagesError.innerText);
     }
 
     const signupBtn = document.getElementById('signup-btn');
