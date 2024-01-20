@@ -3,3 +3,4 @@ node_modules/
 public/css/tailwind.css
 package-lock.json
 .env
+db/
