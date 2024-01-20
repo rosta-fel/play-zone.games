@@ -12,6 +12,7 @@ import PageUtil from "./utils/page.js";
 import PassportUtil from "./utils/passport.js";
 import authRoute from "./routes/auth.js";
 import setUserMiddleware from "./middlewares/user.js";
+import { Server } from "socket.io";
 import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,6 +22,39 @@ PassportUtil.initialize(passport)
 
 const app = express();
 const port = process.env.APP_PORT;
+
+const server = app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
+const io = new Server(server, {
+  cors: {
+    origin: [`localhost:${port}`, `127.0.0.0.1:${port}`]
+  },
+});
+
+io.on('connection', (socket) => {
+  console.log(`User [${socket.id}] connected.`);
+
+  // Upon connection - only to user
+  socket.emit('message', "Welcome to ChatApp!");
+
+  // Upon connection - to all others
+  socket.broadcast.emit('message', `${socket.id.substring(0,5)} connected!`)
+
+  socket.on('message', message => {
+    io.emit('message', `${socket.id.substring(0,5)}: ${message}`);
+  });
+
+  // When user disconnects - to all others
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('message', `${socket.id.substring(0,5)} disconnected!`)
+  });
+
+  // Listen for activity
+  socket.on('activity', (name) => {
+    socket.broadcast.emit('activity', name)
+  });
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -51,8 +85,4 @@ app.use(authRoute);
 app.get('*', (_req, res) => {
   res.status(404);
   PageUtil.render(res, "utils/404");
-});
-
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
 });
