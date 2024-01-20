@@ -1,6 +1,6 @@
 -- MySQL 8.0
 
-CREATE DATABASE wa_playzone_db;
+CREATE DATABASE IF NOT EXISTS wa_playzone_db;
 USE wa_playzone_db;
 
 CREATE TABLE USERS (
