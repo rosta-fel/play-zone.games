@@ -2,7 +2,7 @@ DOCKER_USERNAME ?= rostajecna
 APPLICATION_NAME ?= play-zone.games
 GIT_HASH ?= $(shell git log --format="%h" -n 1)
 
-DOCKER_PROJECT_NAME = playzome
+DOCKER_PROJECT_NAME = playzone
 
 include .env
 export
