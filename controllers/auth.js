@@ -44,7 +44,6 @@ class AuthController {
             }
 
             const user = {
-                id: crypto.randomUUID(),
                 username: req.body.username,
                 email: req.body.email,
                 password: AuthService.hashPassword(req.body.password),
