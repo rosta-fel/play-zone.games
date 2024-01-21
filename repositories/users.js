@@ -11,8 +11,8 @@ class UsersRepo {
         return users ? users[0] : null;
     }
 
-    static async insert({id, username, email, password}) {
-        return await DatabaseUtil.query('INSERT INTO USERS(id, username, email, password) VALUES (?,?,?,?)', [id, username, email, password]);
+    static async insert({username, email, password}) {
+        return await DatabaseUtil.query('INSERT INTO USERS(username, email, password) VALUES (?,?,?)', [username, email, password]);
     }
 
     static serialize(user, done) {
