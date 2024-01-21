@@ -13,6 +13,7 @@ import PassportUtil from "./utils/passport.js";
 import authRoute from "./routes/auth.js";
 import setUserMiddleware from "./middlewares/user.js";
 import { Server } from "socket.io";
+import SocketUtil from "./utils/socket.js";
 import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -28,16 +29,11 @@ const server = app.listen(port, () => {
 });
 const io = new Server(server, {
   cors: {
-    origin: [`localhost:${port}`, `127.0.0.0.1:${port}`]
+    origin: [`localhost:${port}`, `127.0.0.1:${port}`]
   },
 });
 
-io.on('connection', (socket) => {
-  socket.on('message', (data) => {
-    io.emit('message', data);
-  });
-});
-
+SocketUtil.initialize(io);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
