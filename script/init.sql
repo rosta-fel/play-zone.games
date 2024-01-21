@@ -1,8 +1,5 @@
 -- MySQL 8.0
 
-CREATE DATABASE wa_playzone_db;
-USE wa_playzone_db;
-
 CREATE TABLE USERS (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(15) NOT NULL UNIQUE,
@@ -17,7 +14,7 @@ CREATE TABLE MESSAGES (
     user_id INT NOT NULL,
     message VARCHAR(500) NOT NULL,
     written DATETIME NOT NULL,
-    
+
     FOREIGN KEY (user_id) REFERENCES USERS(id)
 );
 
