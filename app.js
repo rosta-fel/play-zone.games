@@ -33,28 +33,11 @@ const io = new Server(server, {
 });
 
 io.on('connection', (socket) => {
-  console.log(`User [${socket.id}] connected.`);
-
-  // Upon connection - only to user
-  socket.emit('message', "Welcome to ChatApp!");
-
-  // Upon connection - to all others
-  socket.broadcast.emit('message', `${socket.id.substring(0,5)} connected!`)
-
-  socket.on('message', message => {
-    io.emit('message', `${socket.id.substring(0,5)}: ${message}`);
-  });
-
-  // When user disconnects - to all others
-  socket.on('disconnect', () => {
-    socket.broadcast.emit('message', `${socket.id.substring(0,5)} disconnected!`)
-  });
-
-  // Listen for activity
-  socket.on('activity', (name) => {
-    socket.broadcast.emit('activity', name)
+  socket.on('message', (data) => {
+    io.emit('message', data);
   });
 });
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
