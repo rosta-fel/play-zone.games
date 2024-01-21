@@ -4,3 +4,4 @@ node_modules/
 Dockerfile
 public/css/tailwind.css
 package-lock.json
+db/
